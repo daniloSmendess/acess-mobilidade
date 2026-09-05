@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AcessiMobilidade | Guia Completo sobre Locomoção Reduzida</title>
+  <meta name="description" content="Portal completo e interativo sobre Locomoção Reduzida, Acessibilidade, Direitos, Legislação (LBI), Normas Técnicas (NBR 9050) e Calculadora de Rampas.">
+  
+  <!-- Fontes Google Modernas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Ícones Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Barra de Acessibilidade Superior Fixa -->
+  <aside class="accessibility-toolbar" aria-label="Barra de Ferramentas de Acessibilidade">
+    <div class="toolbar-container">
+      <div class="toolbar-brand">
+        <i class="ph-bold ph-wheelchair"></i>
+        <span>Recursos de Acessibilidade</span>
+      </div>
+      <div class="toolbar-actions">
+        <button id="btn-decrease-font" title="Diminuir tamanho da fonte" aria-label="Diminuir fonte">
+          <i class="ph-bold ph-text-aa"></i> A-
+        </button>
+        <button id="btn-reset-font" title="Tamanho padrão da fonte" aria-label="Fonte normal">
+          A
+        </button>
+        <button id="btn-increase-font" title="Aumentar tamanho da fonte" aria-label="Aumentar fonte">
+          <i class="ph-bold ph-text-t"></i> A+
+        </button>
+        <div class="divider"></div>
+        <button id="btn-theme-toggle" title="Alternar Modo Escuro / Alto Contraste" aria-label="Alternar Tema">
+          <i class="ph-bold ph-sun-dim"></i> <span id="theme-label">Alto Contraste</span>
+        </button>
+        <button id="btn-speak" class="speak-btn" title="Ouvir leitura do texto da página" aria-label="Leitor de voz">
+          <i class="ph-bold ph-speaker-high" id="speak-icon"></i> <span id="speak-label">Ouvir Página</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Cabeçalho / Navegação Principal -->
+  <header class="main-header" id="topo">
+    <div class="header-container">
+      <a href="#topo" class="logo">
+        <div class="logo-icon">
+          <i class="ph-fill ph-person-simple-walk"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">Acessi<span class="highlight">Mobilidade</span></span>
+          <span class="logo-subtitle">Inclusão, Direitos e Autonomia</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#o-que-e" class="nav-link"><i class="ph ph-info"></i> O que é</a>
+        <a href="#quem-sao" class="nav-link"><i class="ph ph-users-three"></i> Quem são</a>
+        <a href="#direitos" class="nav-link"><i class="ph ph-scales"></i> Direitos e Leis</a>
+        <a href="#nbr9050" class="nav-link"><i class="ph ph-ruler"></i> Normas NBR 9050</a>
+        <a href="#calculadora" class="nav-link"><i class="ph ph-calculator"></i> Calculadora</a>
+        <a href="#mapa-urbano" class="nav-link"><i class="ph ph-map-pin"></i> Mapa Acessível</a>
+        <a href="#quiz" class="nav-link"><i class="ph ph-brain"></i> Quiz</a>
+      </nav>
+
+      <div class="header-cta">
+        <a href="#denuncia" class="btn-primary-sm">
+          <i class="ph-bold ph-warning-circle"></i> Denunciar Barreira
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="ph-fill ph-heart"></i> Cidade Inclusiva & Direitos Universais
+        </div>
+        <h1 class="hero-title">Tudo sobre <span class="gradient-text">Locomoção Reduzida</span> e Acessibilidade</h1>
+        <p class="hero-description">
+          A mobilidade urbana e o direito de ir e vir são garantias fundamentais. Entenda o conceito, a legislação brasileira, normas técnicas de acessibilidade arquitetônica, dicas práticas e use nossas ferramentas interativas.
+        </p>
+        <div class="hero-buttons">
+          <a href="#o-que-e" class="btn btn-primary">
+            <i class="ph-bold ph-book-open"></i> Explorar Guia Completo
+          </a>
+          <a href="#calculadora" class="btn btn-secondary">
+            <i class="ph-bold ph-calculator"></i> Calculadora NBR 9050
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-num">+45 Milhões</span>
+            <span class="stat-desc">de pessoas no Brasil com deficiência ou mobilidade reduzida</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">Lei 13.146</span>
+            <span class="stat-desc">Estatuto da Pessoa com Deficiência (LBI) em vigor</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">NBR 9050</span>
+            <span class="stat-desc">Diretrizes universais para rampas, portas e calçadas</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 1: O que é Locomoção Reduzida -->
+    <section id="o-que-e" class="section">
+      <div class="section-header">
+        <span class="section-tag"><i class="ph-fill ph-sparkle"></i> Fundamentos</span>
+        <h2 class="section-title">O que é Locomoção Reduzida?</h2>
+        <p class="section-subtitle">Diferenças fundamentais entre deficiência física permanente e mobilidade reduzida</p>
+      </div>
+
+      <div class="concept-grid">
+        <div class="card concept-card highlighted-border">
+          <div class="card-icon blue">
+            <i class="ph-bold ph-person-simple-circle"></i>
+          </div>
+          <h3>Conceito Legal Oficial</h3>
+          <p>
+            Segundo a <strong>Lei Federal nº 10.098/2000</strong> e a <strong>Lei nº 13.146/2015 (LBI)</strong>, pessoa com mobilidade reduzida é aquela que, não se enquadrando no conceito de pessoa com deficiência, tenha, por qualquer motivo, <strong>dificuldade de movimentação, permanente ou temporária</strong>, gerando redução efetiva da mobilidade, da flexibilidade, da coordenação motora ou da percepção.
+          </p>
+        </div>
+
+        <div class="card concept-card">
+          <div class="card-icon purple">
+            <i class="ph-bold ph-clock-clockwise"></i>
+          </div>
+          <h3>Permanente vs. Temporária</h3>
+          <p>
+            A restrição pode ser <strong>temporária</strong> (fraturas, entorses, pós-operatório cirúrgico, gestação avançada) ou <strong>permanente/progressiva</strong> (artrite severa, doenças neuromusculares, envelhecimento natural, amputações e sequelas neurológicas).
+          </p>
+        </div>
+
+        <div class="card concept-card">
+          <div class="card-icon emerald">
+            <i class="ph-bold ph-shield-check"></i>
+          </div>
+          <h3>Direito à Acessibilidade Universal</h3>
+          <p>
+            Acessibilidade não beneficia apenas cadeirantes: beneficia toda a sociedade. Calçadas sem buracos, rampas suaves e transporte acessível trazem segurança para mães com carrinhos, idosos, trabalhadores com cargas e qualquer pessoa ao longo da vida.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 2: Quem são as pessoas com locomoção reduzida -->
+    <section id="quem-sao" class="section bg-alt">
+      <div class="section-header">
+        <span class="section-tag"><i class="ph-fill ph-users-three"></i> Diversidade & Cidadania</span>
+        <h2 class="section-title">Quem são as Pessoas com Mobilidade Reduzida?</h2>
+        <p class="section-subtitle">Conheça os diferentes grupos amparados pelas políticas de atendimento e acessibilidade prioritária</p>
+      </div>
+
+      <div class="profiles-grid">
+        <div class="profile-card">
+          <div class="profile-icon">
+            <i class="ph-fill ph-person-arms-spread"></i>
+          </div>
+          <h4>Idosos (60+ e 80+)</h4>
+          <p>Redução natural de força muscular, equilíbrio, agilidade e reflexos. Têm prioridade legal especial (com superprioridade para maiores de 80 anos).</p>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-icon">
+            <i class="ph-fill ph-gender-female"></i>
+          </div>
+          <h4>Gestantes e Lactantes</h4>
+          <p>Alterações no centro de gravidade, sobrecarga nas articulações, cansaço físico e necessidade de percursos sem impacto ou degraus íngremes.</p>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-icon">
+            <i class="ph-fill ph-baby"></i>
+          </div>
+          <h4>Pessoas com Criança de Colo / Carrinho</h4>
+          <p>Dificuldade de transitar em catracas estreitas, escadarias sem elevador, portas pesadas e calçadas esburacadas ou sem rampa.</p>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-icon">
+            <i class="ph-fill ph-first-aid"></i>
+          </div>
+          <h4>Pessoas com Lesões Temporárias</h4>
+          <p>Usuários momentâneos de gesso, muletas, andadores, botas ortopédicas ou em recuperação de cirurgias ortopédicas e abdominais.</p>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-icon">
+            <i class="ph-fill ph-user-focus"></i>
+          </div>
+          <h4>Pessoas com Obesidade Severa</h4>
+          <p>Necessidade de assentos com dimensões e resistência adequadas (suporte mínimo de 250kg), vãos livres maiores e circulação desobstruída.</p>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-icon">
+            <i class="ph-fill ph-wheelchair"></i>
+          </div>
+          <h4>Pessoas com Deficiência Física / Motora</h4>
+          <p>Usuários de cadeira de rodas motorizada ou manual, próteses, órteses e pessoas com paralisia, esclerose, Parkinson ou nanismo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 3: Direitos e Leis no Brasil -->
+    <section id="direitos" class="section">
+      <div class="section-header">
+        <span class="section-tag"><i class="ph-fill ph-gavel"></i> Legislação Brasileira</span>
+        <h2 class="section-title">Direitos Garantidos por Lei</h2>
+        <p class="section-subtitle">Principais leis e benefícios que protegem a locomoção reduzida no Brasil</p>
+      </div>
+
+      <div class="laws-container">
+        <!-- Acordeão Interativo de Leis -->
+        <div class="accordion">
+          <div class="accordion-item active">
+            <button class="accordion-header" aria-expanded="true">
+              <span class="acc-title"><i class="ph-bold ph-scales"></i> Lei Brasileira de Inclusão (LBI nº 13.146/2015)</span>
+              <i class="ph-bold ph-caret-down acc-arrow"></i>
+            </button>
+            <div class="accordion-content">
+              <p>O Estatuto da Pessoa com Deficiência consolidou garantias essenciais de acessibilidade em transportes, habitação, trabalho, saúde e educação. Estabelece que <strong>acessibilidade é direito que garante à pessoa viver de forma independente e exercer seus direitos de cidadania</strong>.</p>
+              <ul>
+                <li>Obrigatoriedade de hotéis terem pelo menos 10% de dormitórios acessíveis.</li>
+                <li>Garantia de atendimento prioritário imediato em todos os órgãos públicos e privados de atendimento ao público.</li>
+                <li>Sanções e penalidades para discriminação e recusa de adaptações razoáveis.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span class="acc-title"><i class="ph-bold ph-car"></i> Vagas Exclusivas de Estacionamento (Resoluções CONTRAN nº 965/2022)</span>
+              <i class="ph-bold ph-caret-down acc-arrow"></i>
+            </button>
+            <div class="accordion-content">
+              <p>Reserva obrigatória de no mínimo <strong>2% das vagas de estacionamento público e privado</strong> para pessoas com deficiência/mobilidade reduzida e <strong>5% para pessoas idosas</strong>.</p>
+              <ul>
+                <li>As vagas devem ter sinalização horizontal e vertical e espaço adicional de circulação (faixa amarela/azul).</li>
+                <li>Necessário exibir no painel a <strong>Credencial de Estacionamento</strong> (Cartão DeFis / Idoso) emitida pelo órgão municipal de trânsito ou SENATRAN.</li>
+                <li>Estacionar em vaga exclusiva sem credencial é infração gravíssima (7 pontos na CNH, multa e guincho).</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span class="acc-title"><i class="ph-bold ph-bus"></i> Transporte Público & Passe Livre</span>
+              <i class="ph-bold ph-caret-down acc-arrow"></i>
+            </button>
+            <div class="accordion-content">
+              <p>Garantia de 100% de frota de ônibus e trens com elevadores/plataformas elevatórias, assentos reservados sinalizados em amarelo e embarque prioritário.</p>
+              <ul>
+                <li><strong>Passe Livre Federal (Lei nº 8.899/94)</strong>: Gratuidade em viagens interestaduais de ônibus, trem ou barco para pessoas com deficiência comprovadamente carentes.</li>
+                <li><strong>Assentos Preferenciais</strong>: Em várias cidades e estados, todos os assentos de transporte público são preferenciais na presença de pessoas com mobilidade reduzida.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span class="acc-title"><i class="ph-bold ph-airplane-tilt"></i> Viagens Aéreas e Resolução ANAC nº 280/2013 (PNAE)</span>
+              <i class="ph-bold ph-caret-down acc-arrow"></i>
+            </button>
+            <div class="accordion-content">
+              <p>Regras para Passageiros com Necessidade de Assistência Especial (PNAE) em aeroportos e aeronaves:</p>
+              <ul>
+                <li>As companhias aéreas devem fornecer assistência gratuita do check-in até o desembarque na esteira de bagagens.</li>
+                <li>A cadeira de rodas ou auxílio de locomoção do passageiro deve ser despachada sem custo adicional e entregue na porta da aeronave.</li>
+                <li>Desconto de no mínimo 80% na passagem do acompanhante quando exigido por necessidade médica (mediante formulário MEDIF).</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span class="acc-title"><i class="ph-bold ph-house-line"></i> Acessibilidade em Edifícios Residenciais & Comerciais</span>
+              <i class="ph-bold ph-caret-down acc-arrow"></i>
+            </button>
+            <div class="accordion-content">
+              <p>Conforme o Decreto nº 9.451/2018, novos empreendimentos residenciais multifamiliares devem ser construídos de modo que as unidades sejam adaptáveis e as áreas comuns sejam 100% acessíveis (rotas acessíveis da calçada aos apartamentos, elevadores com avisos sonoros e braille).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 4: Normas NBR 9050 Explicadas -->
+    <section id="nbr9050" class="section bg-alt">
+      <div class="section-header">
+        <span class="section-tag"><i class="ph-fill ph-compass-tool"></i> Engenharia & Arquitetura</span>
+        <h2 class="section-title">Norma Técnica NBR 9050 (ABNT)</h2>
+        <p class="section-subtitle">Diretrizes universais para acessibilidade a edificações, mobiliário, espaços e equipamentos urbanos</p>
+      </div>
+
+      <div class="nbr-grid">
+        <div class="nbr-card">
+          <div class="nbr-icon"><i class="ph-bold ph-stairs"></i></div>
+          <h4>Rampas de Acesso</h4>
+          <p>Inclinação máxima ideal de <strong>8,33% (1:12)</strong>. A cada 50m de desnível ou curva, é obrigatório patamar de descanso de no mínimo 1,20m de comprimento.</p>
+          <span class="nbr-badge">Inclinação ideal: 5% a 8,33%</span>
+        </div>
+
+        <div class="nbr-card">
+          <div class="nbr-icon"><i class="ph-bold ph-door"></i></div>
+          <h4>Portas e Vãos de Passagem</h4>
+          <p>O vão livre mínimo de qualquer porta acessível deve ser de <strong>0,80m (80 cm)</strong> de largura e altura livre de 2,10m, com maçanetas tipo alavanca a 0,80m - 1,10m de altura.</p>
+          <span class="nbr-badge">Vão Livre Mínimo: 80 cm</span>
+        </div>
+
+        <div class="nbr-card">
+          <div class="nbr-icon"><i class="ph-bold ph-toilet"></i></div>
+          <h4>Sanitários Acessíveis</h4>
+          <p>Giro de 360° com diâmetro livre de 1,50m, barras de apoio retas e articuladas ao lado da bacia (altura 0,75m), pia suspensa sem coluna e campainha de emergência a 40cm do chão.</p>
+          <span class="nbr-badge">Raio de Giro: Ø 1,50m</span>
+        </div>
+
+        <div class="nbr-card">
+          <div class="nbr-icon"><i class="ph-bold ph-footprints"></i></div>
+          <h4>Piso Tátil & Calçadas</h4>
+          <p>Calçadas devem ter faixa livre de passeio de no mínimo <strong>1,20m desimpedida</strong>. Piso tátil direcional (guia de rota) e piso tátil de alerta (indica degraus, obstáculos e travessias).</p>
+          <span class="nbr-badge">Faixa Livre: Mínimo 1,20m</span>
+        </div>
+
+        <div class="nbr-card">
+          <div class="nbr-icon"><i class="ph-bold ph-hand-fist"></i></div>
+          <h4>Corrimãos Duplos</h4>
+          <p>Corrimãos contínuos em ambos os lados de rampas e escadas em duas alturas: <strong>0,92m</strong> (adulto) e <strong>0,70m</strong> (crianças e pessoas de baixa estatura), prolongando 30cm nas extremidades.</p>
+          <span class="nbr-badge">Alturas: 92 cm e 70 cm</span>
+        </div>
+
+        <div class="nbr-card">
+          <div class="nbr-icon"><i class="ph-bold ph-arrows-in-cardinal"></i></div>
+          <h4>Módulos de Referência (M.R.)</h4>
+          <p>Projeção espacial ocupada por uma pessoa utilizando cadeira de rodas manual ou motorizada: retângulo de <strong>0,80m por 1,20m</strong> no piso.</p>
+          <span class="nbr-badge">M.R.: 0,80m x 1,20m</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 5: Calculadora Interativa NBR 9050 -->
+    <section id="calculadora" class="section">
+      <div class="section-header">
+        <span class="section-tag"><i class="ph-fill ph-calculator"></i> Ferramenta Prática</span>
+        <h2 class="section-title">Calculadora de Rampas NBR 9050</h2>
+        <p class="section-subtitle">Calcule o comprimento necessário, inclinação percentual e veja se o seu projeto está em conformidade com a ABNT</p>
+      </div>
+
+      <div class="calculator-wrapper">
+        <div class="calc-panel">
+          <form id="ramp-calc-form" onsubmit="return false;">
+            <div class="form-group">
+              <label for="height-input">
+                <i class="ph-bold ph-arrows-vertical"></i> Altura do Desnível / Degrau (em cm ou metros):
+              </label>
+              <div class="input-inline">
+                <input type="number" id="height-input" placeholder="Ex: 50" min="1" max="1000" step="any" required value="40">
+                <select id="height-unit" aria-label="Unidade de medida do desnível">
+                  <option value="cm" selected>Centímetros (cm)</option>
+                  <option value="m">Metros (m)</option>
+                </select>
+              </div>
+              <small class="helper-text">Ex: Um degrau típico tem 18 cm; um desnível de calçada tem 40 cm a 80 cm.</small>
+            </div>
+
+            <div class="form-group">
+              <label for="ramp-target-slope">
+                <i class="ph-bold ph-chart-line-down"></i> Inclinação Desejada (%):
+              </label>
+              <select id="ramp-target-slope">
+                <option value="8.33" selected>8,33% (1:12) - Padrão Geral NBR 9050 (Desníveis até 80cm)</option>
+                <option value="6.25">6,25% (1:16) - Desníveis entre 80cm e 100cm</option>
+                <option value="5.00">5,00% (1:20) - Rampa Muito Suave / Confortável (Desníveis acima de 1m)</option>
+                <option value="10.00">10,00% (1:10) - Permitido apenas para reformas/desníveis até 20cm</option>
+                <option value="12.50">12,50% (1:8) - Permitido apenas para reformas/desníveis até 10cm</option>
+              </select>
+            </div>
+
+            <button type="button" id="btn-calculate-ramp" class="btn btn-primary btn-block">
+              <i class="ph-bold ph-calculator"></i> Calcular Comprimento e Patamares
+            </button>
+          </form>
+        </div>
+
+        <div class="calc-results-panel" id="calc-results">
+          <h3><i class="ph-fill ph-check-circle"></i> Resultado do Dimensionamento</h3>
+          
+          <div class="result-highlight">
+            <div class="res-item">
+              <span class="res-label">Comprimento Total de Rampa:</span>
+              <span class="res-value" id="res-length">4,80 m</span>
+            </div>
+            <div class="res-item">
+              <span class="res-label">Inclinação Aplicada:</span>
+              <span class="res-value" id="res-slope">8,33% (1:12)</span>
+            </div>
+            <div class="res-item">
+              <span class="res-label">Patamares de Descanso recomendados:</span>
+              <span class="res-value" id="res-landings">0 patamares intermediários</span>
+            </div>
+          </div>
+
+          <!-- Representação Visual da Rampa -->
+          <div class="ramp-visualizer" aria-hidden="true">
+            <div class="visual-ramp-slope" id="visual-ramp">
+              <span class="slope-text" id="visual-slope-text">8.33%</span>
+            </div>
+            <div class="visual-height-label" id="visual-h-text">h = 40 cm</div>
+            <div class="visual-length-label" id="visual-l-text">L = 4,80 m</div>
+          </div>
+
+          <div class="nbr-verdict" id="nbr-verdict-box">
+            <i class="ph-bold ph-shield-check" id="verdict-icon"></i>
+            <span id="verdict-text">Totalmente em conformidade com a NBR 9050 para circulação autônoma e segura.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 6: Mapa Interativo de Mobilidade & Acessibilidade -->
+    <section id="mapa-urbano" class="section bg-alt">
+      <div class="section-header">
+        <span class="section-tag"><i class="ph-fill ph-map-trifold"></i> Explorador Urbano</span>
+        <h2 class="section-title">Guia de Recursos & Locais Acessíveis</h2>
+        <p class="section-subtitle">Filtre pontos de interesse com rotas táteis, elevadores, rampas e banheiros adaptados</p>
+      </div>
+
+      <div class="map-container">
+        <!-- Filtros de Categorias -->
+        <div class="map-filters" role="group" aria-label="Filtros de infraestrutura acessível">
+          <button class="filter-btn active" data-filter="all">Todos os Pontos</button>
+          <button class="filter-btn" data-filter="transporte"><i class="ph-bold ph-train"></i> Transporte & Metrô</button>
+          <button class="filter-btn" data-filter="cultura"><i class="ph-bold ph-palette"></i> Cultura & Parques</button>
+          <button class="filter-btn" data-filter="saude"><i class="ph-bold ph-hospital"></i> Saúde & Hospitais</button>
+          <button class="filter-btn" data-filter="comercio"><i class="ph-bold ph-shopping-bag"></i> Centros Comerciais</button>
+        </div>
+
+        <div class="map-cards-grid" id="places-grid">
+          <!-- Gerado via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 7: Quiz Interativo Mitos & Verdades -->
+    <section id="quiz" class="section">
+      <div class="section-header">
+        <span class="section-tag"><i class="ph-fill ph-brain"></i> Teste seu Conhecimento</span>
+        <h2 class="section-title">Quiz: Mitos e Verdades sobre Acessibilidade</h2>
+        <p class="section-subtitle">Descubra se você sabe tudo sobre direitos e boas práticas de convivência inclusiva</p>
+      </div>
+
+      <div class="quiz-container" id="quiz-wrapper">
+        <div class="quiz-header">
+          <span class="quiz-progress" id="quiz-progress-indicator">Pergunta 1 de 5</span>
+          <span class="quiz-score" id="quiz-score-indicator">Pontuação: 0</span>
+        </div>
+
+        <div class="quiz-body" id="quiz-body">
+          <h3 class="quiz-question" id="quiz-question-text">Carregando pergunta...</h3>
+          <div class="quiz-options" id="quiz-options">
+            <!-- Opções via JS -->
+          </div>
+          <div class="quiz-feedback" id="quiz-feedback" style="display: none;">
+            <p id="quiz-feedback-text"></p>
+            <button id="btn-next-question" class="btn btn-primary">Próxima Pergunta <i class="ph-bold ph-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 8: Como Denunciar Falta de Acessibilidade -->
+    <section id="denuncia" class="section bg-alt">
+      <div class="section-header">
+        <span class="section-tag"><i class="ph-fill ph-megaphone-simple"></i> Cidadania Ativa</span>
+        <h2 class="section-title">Como Denunciar Barreiras Arquitetônicas</h2>
+        <p class="section-subtitle">Passo a passo para exigir reformas em calçadas, estabelecimentos e serviços sem acessibilidade</p>
+      </div>
+
+      <div class="denounce-grid">
+        <div class="denounce-step">
+          <div class="step-badge">Passo 1</div>
+          <h4>Documentar com Fotos e Vídeos</h4>
+          <p>Tire fotos claras do local, registrando degraus sem rampa, calçadas intransitáveis, falta de banheiros adaptados ou obstrução de vagas exclusivas. Anote data, horário e endereço exato.</p>
+        </div>
+
+        <div class="denounce-step">
+          <div class="step-badge">Passo 2</div>
+          <h4>Canais Municipais (Prefeitura / 156)</h4>
+          <p>Para calçadas públicas, guias rebaixadas ou ônibus sem elevador funcionando, abra chamado oficial na Ouvidoria Geral do Município ou na central de atendimento 156.</p>
+        </div>
+
+        <div class="denounce-step">
+          <div class="step-badge">Passo 3</div>
+          <h4>Ministério Público do Estado (MPE)</h4>
+          <p>O Ministério Público possui Promotorias de Justiça de Direitos Humanos e Proteção à Pessoa com Deficiência. É possível abrir uma representação online e gratuita.</p>
+        </div>
+
+        <div class="denounce-step">
+          <div class="step-badge">Passo 4</div>
+          <h4>PROCON e Órgãos de Defesa</h4>
+          <p>Estabelecimentos comerciais (bancos, restaurantes, shoppings e farmácias) que não oferecem acesso a pessoas com mobilidade reduzida cometem infração contra o consumidor.</p>
+        </div>
+      </div>
+
+      <!-- Gerador de Modelo de Reclamação / Denúncia -->
+      <div class="complaint-generator">
+        <h3><i class="ph-bold ph-file-text"></i> Gerador Rápido de Texto de Denúncia</h3>
+        <p>Preencha os campos abaixo para gerar um texto formal pronto para copiar e enviar à ouvidoria ou Ministério Público:</p>
+        
+        <div class="generator-form">
+          <div class="form-row">
+            <input type="text" id="den-place" placeholder="Nome do Estabelecimento / Local (ex: Banco X, Linha de Ônibus 100, Calçada Rua Y)">
+            <input type="text" id="den-address" placeholder="Endereço completo / Cidade">
+          </div>
+          <div class="form-row">
+            <select id="den-problem">
+              <option value="ausência de rampa de acesso ou elevador para entrada">Ausência de rampa/elevador na entrada</option>
+              <option value="calçada pública completamente esburacada e sem guia rebaixada">Calçada intransitável/sem rampa de calçada</option>
+              <option value="inexistência ou bloqueio de sanitário acessível conforme NBR 9050">Banheiro inacessível ou trancado</option>
+              <option value="elevador de ônibus urbano inoperante impedindo embarque">Elevador de transporte coletivo quebrado</option>
+              <option value="vagas exclusivas de estacionamento ocupadas irregularmente">Vaga exclusiva desrespeitada/sem sinalização</option>
+            </select>
+          </div>
+          <button id="btn-generate-complaint" class="btn btn-secondary">
+            <i class="ph-bold ph-magic-wand"></i> Gerar Modelo de Reclamação
+          </button>
+        </div>
+
+        <div class="complaint-result" id="complaint-result-box" style="display:none;">
+          <textarea id="complaint-text-output" rows="6" readonly></textarea>
+          <button id="btn-copy-complaint" class="btn btn-primary-sm">
+            <i class="ph-bold ph-copy"></i> Copiar Texto
+          </button>
+          <span id="copy-feedback" class="copy-feedback"></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé Moderno e Acessível -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-col brand-col">
+        <div class="logo-footer">
+          <i class="ph-fill ph-wheelchair"></i>
+          <span>AcessiMobilidade</span>
+        </div>
+        <p>Promovendo a autonomia, a dignidade, a conscientização social e a acessibilidade universal para todas as pessoas.</p>
+        <p class="compliance-note"><i class="ph-bold ph-check"></i> Em conformidade com as diretrizes de acessibilidade na Web (WCAG 2.1 AA).</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegação Rápida</h4>
+        <ul>
+          <li><a href="#o-que-e">O que é Locomoção Reduzida</a></li>
+          <li><a href="#quem-sao">Grupos e Perfis</a></li>
+          <li><a href="#direitos">Legislação e Direitos</a></li>
+          <li><a href="#nbr9050">Normas NBR 9050</a></li>
+          <li><a href="#calculadora">Calculadora de Rampas</a></li>
+          <li><a href="#mapa-urbano">Mapa de Pontos Acessíveis</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Telefones Úteis</h4>
+        <ul class="emergency-links">
+          <li><strong>Disque 100:</strong> Direitos Humanos & Violações</li>
+          <li><strong>156:</strong> Ouvidoria e Calçadas Municipais</li>
+          <li><strong>190 / 193:</strong> Polícia Militar / Bombeiros</li>
+          <li><strong>0800 727 7010:</strong> ANAC (Direitos dos Passageiros)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 AcessiMobilidade. Conteúdo educativo livre para fins de conscientização e inclusão social.</p>
+      <a href="#topo" class="back-to-top" title="Voltar ao início da página" aria-label="Voltar ao início">
+        <i class="ph-bold ph-arrow-up"></i> Topo
+      </a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
