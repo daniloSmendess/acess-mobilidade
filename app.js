@@ -3,6 +3,9 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // 0. MENU MOBILE RESPONSIVO
+  initMobileMenu();
+
   // 1. GESTÃO DE ACESSIBILIDADE (Fonte, Alto Contraste, Leitor de Voz)
   initAccessibilityToolbar();
 
@@ -21,6 +24,35 @@ document.addEventListener('DOMContentLoaded', () => {
   // 6. GERADOR DE DENÚNCIA / RECLAMAÇÃO
   initComplaintGenerator();
 });
+
+/* ==========================================================================
+   0. MENU MOBILE RESPONSIVO
+   ========================================================================== */
+function initMobileMenu() {
+  const toggleBtn = document.getElementById('mobileMenuToggle');
+  const navMenu = document.getElementById('navMenu');
+  const toggleIcon = document.getElementById('menuToggleIcon');
+  const navLinks = navMenu?.querySelectorAll('.nav-link');
+
+  toggleBtn?.addEventListener('click', () => {
+    const isOpen = navMenu.classList.toggle('open');
+    toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    if (toggleIcon) {
+      toggleIcon.className = isOpen ? 'ph-bold ph-x' : 'ph-bold ph-list';
+    }
+  });
+
+  // Fechar menu ao clicar em qualquer item no mobile
+  navLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navMenu.classList.contains('open')) {
+        navMenu.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        if (toggleIcon) toggleIcon.className = 'ph-bold ph-list';
+      }
+    });
+  });
+}
 
 /* ==========================================================================
    1. BARRA DE ACESSIBILIDADE (FONTE, CONTRASTE E TTS)
